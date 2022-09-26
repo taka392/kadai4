@@ -40,6 +40,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @book_new = Book.new
     @user = @book.user
+    @book_comment = BookComment.new
 
   end
 
@@ -68,4 +69,5 @@ class BooksController < ApplicationController
     @user = @book.user
     redirect_to books_path unless @user == current_user
   end
+
 end
